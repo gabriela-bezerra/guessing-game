@@ -1,3 +1,5 @@
 """A number-guessing game."""
 
-# Put your code here
+print("Hi")
+
+print(" Welcome to the guessing game!")
