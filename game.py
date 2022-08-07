@@ -5,13 +5,12 @@ import random
 
 def guessing_game():
     print()
-    print("Hi")
+    print("Welcome to the guessing game!")
     print()
     name = input("What is your name? ")
 
-    print(f"Welcome {name} to the guessing game!")
     print()
-    print("I'm thiking of a number between 1 an 100")
+    print(f"{name}, I'm thiking of a number between 1 an 100")
 
     pc_number = random.randint(1, 100)
 
@@ -31,17 +30,40 @@ def guessing_game():
                 guessing_game()
             else:
                 print("See you next time!")
+                break
             break
             print()
 
         elif guessed_number < pc_number:
             print("Your guess was too low, try again.")
             tries = tries + 1
+            if tries > 5:
+                print(" Too many tries!")
+                play_again = input(
+                    "Would you like to play again? Y/N  > ").lower()
+
+                if play_again == "y":
+                    guessing_game()
+                else:
+                    print("See you next time!")
+                    break
             print()
+
         elif guessed_number > pc_number:
             print("Your guess was too high, try again.")
             tries = tries + 1
+            if tries > 5:
+                print(" Too many tries!")
+                play_again = input(
+                    "Would you like to play again? Y/N  > ").lower()
+
+                if play_again == "y":
+                    guessing_game()
+                else:
+                    print("See you next time!")
+                    break
             print()
+
         else:
             print(" Number not valid, try again.")
             print()
