@@ -10,9 +10,11 @@ def guessing_game():
     name = input("What is your name? ")
 
     print()
-    print(f"{name}, I'm thiking of a number between 1 an 100")
 
-    pc_number = random.randint(1, 100)
+    range1 = int(input(" Choose a start range > "))
+    range2 = int(input(" Choose an end range > "))
+
+    pc_number = random.randint(range1, range2)
 
     tries = 0
 
